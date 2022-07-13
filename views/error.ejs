@@ -1,0 +1,21 @@
+<% layout('layouts/boilerplate') %>
+<style>
+    p {
+        overflow-wrap: break-word;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 col-8 offset-2">
+        <div class="alert alert-danger" role="alert">
+            <div>
+                <h4 class="alert-heading"><%= err.message %></h4>
+            </div>
+            <div>
+                <% if(process.env.NODE_ENV!=="production"){ %>
+                <p text-align="center"><%= err.stack %> </p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
